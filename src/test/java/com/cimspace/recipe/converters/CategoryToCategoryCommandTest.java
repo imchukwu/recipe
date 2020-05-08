@@ -2,10 +2,10 @@ package com.cimspace.recipe.converters;
 
 import com.cimspace.recipe.commands.CategoryCommand;
 import com.cimspace.recipe.domain.Category;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.Before;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
 /**
  * Created by jt on 6/21/17.
@@ -16,7 +16,7 @@ public class CategoryToCategoryCommandTest {
     public static final String DESCRIPTION = "descript";
     CategoryToCategoryCommand convter;
 
-    @BeforeEach
+    @Before
     public void setUp() throws Exception {
         convter = new CategoryToCategoryCommand();
     }

@@ -2,11 +2,10 @@ package com.cimspace.recipe.converters;
 
 import com.cimspace.recipe.commands.UnitOfMeasureCommand;
 import com.cimspace.recipe.domain.UnitOfMeasure;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.Before;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
+import static org.junit.Assert.*;
 
 /**
  * Created by jt on 6/21/17.
@@ -18,7 +17,7 @@ public class UnitOfMeasureToUnitOfMeasureCommandTest {
 
     UnitOfMeasureToUnitOfMeasureCommand converter;
 
-    @BeforeEach
+    @Before
     public void setUp() throws Exception {
         converter = new UnitOfMeasureToUnitOfMeasureCommand();
     }

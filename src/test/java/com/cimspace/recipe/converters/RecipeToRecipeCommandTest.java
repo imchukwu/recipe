@@ -2,11 +2,10 @@ package com.cimspace.recipe.converters;
 
 import com.cimspace.recipe.commands.RecipeCommand;
 import com.cimspace.recipe.domain.*;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.Before;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
+import static org.junit.Assert.*;
 
 public class RecipeToRecipeCommandTest {
 
@@ -26,7 +25,7 @@ public class RecipeToRecipeCommandTest {
     public static final Long NOTES_ID = 9L;
     RecipeToRecipeCommand converter;
 
-    @BeforeEach
+    @Before
     public void setUp() throws Exception {
         converter = new RecipeToRecipeCommand(
                 new CategoryToCategoryCommand(),
