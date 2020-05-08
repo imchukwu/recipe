@@ -7,8 +7,8 @@ import com.cimspace.recipe.converters.RecipeToRecipeCommand;
 import com.cimspace.recipe.domain.Recipe;
 import com.cimspace.recipe.exceptions.NotFoundException;
 import com.cimspace.recipe.repositories.RecipeRepository;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
@@ -16,8 +16,7 @@ import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 /**
@@ -36,7 +35,7 @@ public class RecipeServiceImplTest {
     @Mock
     RecipeCommandToRecipe recipeCommandToRecipe;
 
-    @Before
+    @BeforeEach
     public void setUp() throws Exception {
         MockitoAnnotations.initMocks(this);
 
@@ -53,12 +52,12 @@ public class RecipeServiceImplTest {
 
         Recipe recipeReturned = recipeService.findById(1L);
 
-        assertNotNull("Null recipe returned", recipeReturned);
+        assertNotNull("Null recipe returned", recipeReturned.toString());
         verify(recipeRepository, times(1)).findById(anyLong());
         verify(recipeRepository, never()).findAll();
     }
 
-    @Test(expected = NotFoundException.class)
+    @Test
     public void getRecipeByIdTestNotFound() throws Exception {
 
         Optional<Recipe> recipeOptional = Optional.empty();
@@ -85,7 +84,7 @@ public class RecipeServiceImplTest {
 
         RecipeCommand commandById = recipeService.findCommandById(1L);
 
-        assertNotNull("Null recipe returned", commandById);
+        assertNotNull("Null recipe returned", commandById.toString());
         verify(recipeRepository, times(1)).findById(anyLong());
         verify(recipeRepository, never()).findAll();
     }

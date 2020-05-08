@@ -6,10 +6,10 @@ import com.cimspace.recipe.commands.NotesCommand;
 import com.cimspace.recipe.commands.RecipeCommand;
 import com.cimspace.recipe.domain.Difficulty;
 import com.cimspace.recipe.domain.Recipe;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class RecipeCommandToRecipeTest {
     public static final Long RECIPE_ID = 1L;
@@ -30,7 +30,7 @@ public class RecipeCommandToRecipeTest {
     RecipeCommandToRecipe converter;
 
 
-    @Before
+    @BeforeEach
     public void setUp() throws Exception {
         converter = new RecipeCommandToRecipe(new CategoryCommandToCategory(),
                 new IngredientCommandToIngredient(new UnitOfMeasureCommandToUnitOfMeasure()),

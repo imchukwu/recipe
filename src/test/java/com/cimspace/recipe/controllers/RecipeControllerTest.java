@@ -4,8 +4,8 @@ import com.cimspace.recipe.commands.RecipeCommand;
 import com.cimspace.recipe.domain.Recipe;
 import com.cimspace.recipe.exceptions.NotFoundException;
 import com.cimspace.recipe.services.RecipeService;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.http.MediaType;
@@ -31,7 +31,7 @@ public class RecipeControllerTest {
 
     MockMvc mockMvc;
 
-    @Before
+    @BeforeEach
     public void setUp() throws Exception {
         MockitoAnnotations.initMocks(this);
 
